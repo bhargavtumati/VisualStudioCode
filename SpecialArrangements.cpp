@@ -28,14 +28,49 @@ Output:
 Constraints:
 2 <= n <= 14 (Number of gems in the vault)
 1 <= nums[i] <= 10^9 (Individual gem value)*/
-import java.util.*;
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
 class SpecialArrangements {
-      public int specialArr(List<Integer> nums) {
-        //Write your code here 
-        int count=0;
-return count;
-    }
-    public static void main(String args[]){
-        
-    }
-}
+  public:
+      int specialArr(vector<int>& nums) {
+        //Write your code here
+  
+  
+          dp.resize(20, vector<int>((1 << nums.size()) + 5, -1));
+          vector<int> chosenIndices;
+          return solve(nums, -1, chosenIndices);
+      }
+      vector<vector<int>> dp;
+      int solve(vector<int>& nums, int previdx, vector<int>& chosenIndices) {
+          if (chosenIndices.size() == nums.size())
+              return 1;
+         
+          int mask = 0;
+          for (int index : chosenIndices)
+              mask |= (1 << index);
+         
+          if (dp[previdx + 1][mask] != -1)
+              return dp[previdx + 1][mask];
+     
+          int tot = 0;
+          for (int j = 0; j < nums.size(); j++) {
+              if (find(chosenIndices.begin(), chosenIndices.end(), j) != chosenIndices.end())
+              continue;
+              if (previdx == -1 || nums[previdx] % nums[j] == 0 || nums[j] % nums[previdx] == 0) {
+                  chosenIndices.push_back(j);
+                  tot += solve(nums, j, chosenIndices);
+                  tot %= 1000000007;
+                  chosenIndices.pop_back();
+              }
+          }
+          return  dp[previdx + 1][mask] = tot;
+      }
+  };
+  int main(){
+    vector<int> gems = {2, 3, 6};
+    SpecialArrangements sp;
+    cout<<sp.specialArr(gems);
+  }
