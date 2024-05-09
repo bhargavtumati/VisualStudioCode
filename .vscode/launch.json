@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "maxSubArray",
+            "request": "launch",
+            "mainClass": "maxSubArray",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
+            "name": "countCollisions",
+            "request": "launch",
+            "mainClass": "countCollisions",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
             "name": "kWeakestRows",
             "request": "launch",
             "mainClass": "kWeakestRows",
