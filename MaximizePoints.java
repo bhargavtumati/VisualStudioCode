@@ -30,7 +30,7 @@ Constraints:
 import java.util.HashMap;
 import java.util.Map;
 
- class SpecialArrangements {
+ class MaximizePoints {
     public int deletePoints(int[] nums) {
         // Create a frequency map to store the count of each gem value
         Map<Integer, Integer> freqMap = new HashMap<>();
@@ -57,10 +57,10 @@ import java.util.Map;
         return dp[10000];
     }
     public static void main(String args[]){
-   SpecialArrangements sp=new SpecialArrangements();
+   MaximizePoints sp=new MaximizePoints();
    int nums[]={3,4,2};
 
-   System.out.println(sp.deletePoints(nums));
+   System.out.println("maximum points: "+sp.deletePoints(nums));
 
 
     }

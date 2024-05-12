@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "minMovesToSeat",
+            "request": "launch",
+            "mainClass": "minMovesToSeat",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
+            "name": "matrixBlockSum",
+            "request": "launch",
+            "mainClass": "matrixBlockSum",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
+            "name": "MaximizePoints",
+            "request": "launch",
+            "mainClass": "MaximizePoints",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
+            "name": "SpecialArrangements",
+            "request": "launch",
+            "mainClass": "SpecialArrangements",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
             "name": "findnooflis",
             "request": "launch",
             "mainClass": "findnooflis",
