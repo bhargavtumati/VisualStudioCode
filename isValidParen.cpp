@@ -2,7 +2,7 @@
 #include <stack>
 using namespace std;
 
-class Paren {
+class isValidParen {
 public:
     bool isValid(string s) {
        stack<char> st;

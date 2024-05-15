@@ -2,9 +2,9 @@
 #include <vector>
 using namespace std;
 
-class Uni {
+class singleNonDuplicate {
 public:
-    int singleNonDuplicate(vector<int>& nums) {
+    int Solution(vector<int>& nums) {
         int uni=nums[0];
 if(nums.size()==1)
 return uni;
@@ -29,7 +29,7 @@ return uni;
 int main()
 {
     vector<int> ve={1,2,2,3,3};
-    Uni ch;
-    cout << ch.singleNonDuplicate(ve); 
+    singleNonDuplicate ch;
+    cout << ch.Solution(ve); 
     
 }
