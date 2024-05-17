@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Bitwise",
+            "request": "launch",
+            "mainClass": "Bitwise",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
             "name": "minMovesToSeat",
             "request": "launch",
             "mainClass": "minMovesToSeat",
