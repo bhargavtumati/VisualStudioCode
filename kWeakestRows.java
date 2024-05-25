@@ -31,6 +31,10 @@ class kWeakestRows {
 kWeakestRows as=new kWeakestRows();
 int[][] fh = {{1, 0}, {1, 0}, {1, 0}, {1, 1}}; 
 
-System.out.println(as.Solution(fh, 4));
+int[] ch=as.Solution(fh, 4);
+ 
+for(int c:ch){
+System.out.print(c+" ");
+}
     }
 }

@@ -52,6 +52,8 @@ ListNode* Solution(ListNode* head) {
       head=previousnode;
       
   }
+  return head;
+}
 };
 
 // Driver code

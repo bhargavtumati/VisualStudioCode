@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RegularExMat",
+            "request": "launch",
+            "mainClass": "RegularExMat",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
+            "name": "Hello",
+            "request": "launch",
+            "mainClass": "Hello",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
+            "name": "AlienSequence",
+            "request": "launch",
+            "mainClass": "AlienSequence",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
             "name": "findAndReplacePattern",
             "request": "launch",
             "mainClass": "findAndReplacePattern",

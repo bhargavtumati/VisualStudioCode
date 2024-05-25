@@ -48,7 +48,7 @@ val=true;
 int main()
 {
     string s="(){}}{";
-    Paren ch;
+    isValidParen ch;
     cout << ch.isValid(s); 
     
 }

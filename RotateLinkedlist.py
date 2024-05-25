@@ -29,7 +29,10 @@ Constraints:
 The number of nodes in the list is in the range [0, 500].
 -100 <= Node.val <= 100
 """
-
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 
 class RotateLinkedList:
@@ -61,6 +64,23 @@ class RotateLinkedList:
 
     return new_head
   
+if __name__ == "__main__":
+    # Create a sample linked list: 1 -> 2 -> 3 -> 4 -> 5
+    nodes = [ListNode(i) for i in range(1, 6)]
+    for i in range(4):
+        nodes[i].next = nodes[i + 1]
+
+    # Initialize the linked list
+    linked_list = RotateLinkedList()
+    rotated_head = linked_list.rotateRight(nodes[0], 2)
+
+    # Print the rotated linked list
+    current = rotated_head
+    while current:
+        print(current.val, end=" -> ")
+        current = current.next
+    print("None")
+   
 
      
  
