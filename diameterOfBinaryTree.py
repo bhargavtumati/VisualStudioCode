@@ -62,7 +62,8 @@ class diameterOfBinaryTree:
         return diameter(root)
 
 # Example usage
-solution = Solution()
+
+dia = diameterOfBinaryTree()
 
 # Example 1
 root1 = TreeNode(1)
@@ -70,7 +71,7 @@ root1.left = TreeNode(2)
 root1.right = TreeNode(3)
 root1.left.left = TreeNode(4)
 root1.left.right = TreeNode(5)
-print(solution.diameterOfBinaryTree(root1))  # Output: 3
+print(dia.Solution(root1))  # Output: 3
 
 # Example 2
 root2 = TreeNode(10)
@@ -79,4 +80,4 @@ root2.right = TreeNode(20)
 root2.left.left = TreeNode(3)
 root2.left.right = TreeNode(7)
 root2.right.right = TreeNode(25)
-print(solution.diameterOfBinaryTree(root2))  # Output: 4
+print(dia.Solution(root2))  # Output: 4

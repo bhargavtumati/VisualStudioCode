@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "findAndReplacePattern",
+            "request": "launch",
+            "mainClass": "findAndReplacePattern",
+            "projectName": "VisualStudioCode_388afb8f"
+        },
+        {
+            "type": "java",
             "name": "Bitwise",
             "request": "launch",
             "mainClass": "Bitwise",
