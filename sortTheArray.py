@@ -29,4 +29,23 @@ s consists of uppercase and lowercase English letters and digits.
 """
 class Solution:
     def frequencySort(self, s: str) -> str:
-        return ""
+        hm = {}
+        for c in s:
+            hm[c] = hm.get(c, 0) + 1
+
+        # Sort by frequency (descending) and then by character (ascending)
+        sorted_items = sorted(hm.items(), key=lambda item: (-item[1], item[0]))
+
+        k = ""
+        for char, freq in sorted_items:
+            k += char * freq
+
+        return k
+
+if __name__ == "__main__":
+    f = Solution()
+    s = "tree"
+    print(f.frequencySort(s))
+        
+                
+
