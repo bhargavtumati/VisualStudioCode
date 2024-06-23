@@ -52,7 +52,7 @@ class calculate:
             elif c == ')':
                 stack.pop()    #remove after bracket close
             elif c == '+' or c == '-':
-                ans += sign * num       #
+                ans += sign * num       #updating answer
                 sign = (1 if c == '+' else -1) * stack[-1]
                 num = 0
         return ans + sign * num
