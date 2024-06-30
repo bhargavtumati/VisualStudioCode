@@ -13,6 +13,7 @@ class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         visited=set()
         if destination in self.dfs(source,edges,visited):
+            print(visited)
             return True
         return False
     
