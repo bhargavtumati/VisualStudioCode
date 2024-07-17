@@ -9,7 +9,7 @@ class Stackclass{
 
        System.out.println("removed this element:  "+st.pop());
 
-///inbuilt but can be built by yourself..
+       ///inbuilt but can be built by yourself..
 
        System.out.println("The first element is: " + st.firstElement());
 

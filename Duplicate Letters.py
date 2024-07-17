@@ -18,3 +18,19 @@ Constraints:
 1<= s.length<= 10000
 Note: Input consists of only lower case letters.
 """
+def findunique(s):
+    v=set()
+    j=""
+    for c in s:
+        v.add(c)
+    li=[]
+    for c in v:
+        li.append(c)
+    li.sort()
+    for c in li:
+         j+=c
+    return j
+
+s="cbacdcbc"
+
+print(findunique(s))

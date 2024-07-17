@@ -7,6 +7,7 @@ class Solution:
         flower_bloom_start=[x[0] for x in sorted(flowers,key=lambda x:x[0])]
         flower_bloom_end=[x[1]+1 for x in sorted(flowers,key=lambda x:x[1])]
         def binary_search(array,date):
+            
             low,high=0,len(array)
             while low<high:
                 mid=(low+high)//2

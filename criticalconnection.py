@@ -1,3 +1,83 @@
+# Python code for the above approach:
+def dfs(i, p, rank, k, adj, ans, vis):
+
+	# Set rank of the ith node to k
+	# which is depth
+	rank[i] = k
+
+	# Mark ith node as visited
+	vis[i] = 1
+
+	minDepth = float('inf')
+
+	# Exploring all the neighbour
+	# node of node i
+	for ch in adj[i]:
+
+		# This if condition is to make
+		# sure we do not call parent
+		# from where it is called to
+		# avoid child parent loop
+		if ch != p:
+
+			# If neighbour is already
+			# visited then we take
+			# minimum with rank of ch,
+			# means a cycle is found
+			if vis[ch]:
+				minDepth = min(minDepth, rank[ch])
+
+			# If neighbour is not
+			# visited then we go in
+			# depth to check cycle
+			# is present or not
+			else:
+				minRank = dfs(ch, i, rank, k + 1, adj,
+							ans, vis)
+
+				# If dfs returns smaller
+				# depth value than current
+				# depth it means current
+				# edge is in a cycle
+				# else there is no cycle
+				# so we have pushed the
+				# edge in our answer
+				if rank[i] < minRank:
+					ans.append([i, ch])
+				minDepth = min(minRank, minDepth)
+	return minDepth
+
+# Function to calculate
+# the critical edges
+
+
+def criticalConnections(V, adj):
+	ans = []
+	rank = [-1] * V
+	vis = [0] * V
+	dfs(0, -1, rank, 0, adj, ans, vis)
+	for i in range(len(ans)):
+		ans[i].sort()
+	ans.sort()
+	return ans
+
+
+# Drivers code
+v = 3
+e = 2
+edges = [[0, 1], [0, 2]]
+adj = [[] for _ in range(v)]
+for i in range(e):
+	adj[edges[i][0]].append(edges[i][1])
+	adj[edges[i][1]].append(edges[i][0])
+ans = criticalConnections(v, adj)
+ans.sort()
+for i in range(len(ans)):
+	print(ans[i][0], ans[i][1])
+
+# This code is contributed by Tapesh(tapeshdua420)
+
+
 """Critical Connection
 Given a network of n servers connected by undirected server-to-server connections, identify all the critical connections in the network. A critical connection is defined as a connection that, if removed, would result in some servers being unable to reach other servers.
 
