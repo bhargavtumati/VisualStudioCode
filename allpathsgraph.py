@@ -24,12 +24,16 @@ class Graph:
         visited[u] = False
 
 # Example usage
-g = Graph(4)
-g.addEdge(0, 1)
+g = Graph(5)
 g.addEdge(1, 2)
-g.addEdge(0, 3)
+g.addEdge(1, 3)
+g.addEdge(1, 4)
+g.addEdge(2, 3)
+g.addEdge(2, 4)
+g.addEdge(3, 4)
 
 
-source = 0
+
+source = 1
 print(f"Paths from source {source} to all vertices:")
 g.printAllPaths(source)

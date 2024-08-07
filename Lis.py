@@ -4,9 +4,8 @@ class Solution:
          for i in range(1,n):
            for j in range(i):
              if arr[i]>arr[j]:   # when arr[i] > arr[j] increment by dp[i] by max of (dp[i],d[j]+1)
-               print(i,j)
                dp[i]=max(dp[i],dp[j]+1)
-               print(dp)
+  
          return max(dp) if n>0 else 0
     
 if __name__=="__main__":

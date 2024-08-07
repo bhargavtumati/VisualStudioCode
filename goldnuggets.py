@@ -1,3 +1,21 @@
+def getnoofopertohalvethegoldsum(ar)->int:
+    ar.sort(reverse=True)
+    mainsum=sum(ar)
+    count=0
+    while sum(ar)>mainsum/2:
+        ar[0]=ar[0]/2
+        ar.sort(reverse=True)
+        count+=1
+    return count
+
+ar=[3,8,20]
+print(getnoofopertohalvethegoldsum(ar))
+
+
+
+
+
+
 """Gold Nuggets
 You're a seasoned prospector during the height of the Gold Rush, striking it rich in a hidden valley overflowing with gold nuggets! But these nuggets aren't your typical ore; they possess a curious property: you can split them in half (reduce their value exactly) and still mine additional nuggets from the smaller pieces. Your goal? Maximize your profit by strategically splitting nuggets to reach the richest vein of gold as quickly as possible.
 

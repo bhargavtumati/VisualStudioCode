@@ -23,7 +23,7 @@ class Solution:
             if n == 1:
                 list.append(TreeNode(0))
             else:
-                for i in range(1, n - 1, 2):
+                for i in range(1, n - 1, 2):   #from 1 to n-1, increment by 2
                     lTrees = _allPossibleFBT(i)
                     rTrees = _allPossibleFBT(n - i - 1)
 
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     def treetraversal(root=Optional[TreeNode]):
         if not root:
             return
-        print(root.val,end='')
+        print(root.val,end='->')
         if root.left or root.right:
              print(" -> ",end='')
         if root.left:

@@ -1,3 +1,24 @@
+
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        hm = {}
+        for c in s:
+            hm[c] = hm.get(c, 0) + 1
+
+        # Sort by frequency (descending) and then by character (ascending)
+        sorted_items = sorted(hm.items(), key=lambda item: (-item[1], item[0]))
+
+        k = ""
+        for char, freq in sorted_items:
+            k += char * freq
+
+        return k
+
+if __name__ == "__main__":
+    f = Solution()
+    s = "tree"
+    print(f.frequencySort(s))
+        
 """
 Sort the Array
 You have to sort the string s in decreasing order based on the frequency of the characters. Return the sorted string. if frequency of two character are same then sort in alphabetical order.
@@ -26,26 +47,5 @@ Output
 Constraints:
 1 <= s.length <= 5 * 10^5
 s consists of uppercase and lowercase English letters and digits.
-"""
-class Solution:
-    def frequencySort(self, s: str) -> str:
-        hm = {}
-        for c in s:
-            hm[c] = hm.get(c, 0) + 1
-
-        # Sort by frequency (descending) and then by character (ascending)
-        sorted_items = sorted(hm.items(), key=lambda item: (-item[1], item[0]))
-
-        k = ""
-        for char, freq in sorted_items:
-            k += char * freq
-
-        return k
-
-if __name__ == "__main__":
-    f = Solution()
-    s = "tree"
-    print(f.frequencySort(s))
-        
-                
+"""                
 

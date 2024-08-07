@@ -29,4 +29,4 @@ if __name__=="__main__":
     start=0
     s=solution()
     print(s.bfs(adj,start))
-    print(s.bfs(adj,1))
+    #print(s.bfs(adj,1))

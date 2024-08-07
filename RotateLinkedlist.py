@@ -1,34 +1,4 @@
-"""
-Given the head of a linked list, rotate the list to the right by k places.
 
-Input:
-head: The head of the linked list. (0 <= length of the list <= 500)
-k: The number of places to rotate the list. (0 <= k <= 2 * 10^9)
-
-Output:
-Return the head of the rotated linked list.
-
-Examples:
-
-Input:
-
-head = [1,2,3,4,5], k = 2
-
-Output:
-[4,5,1,2,3]
-Input:
-
-head = [0,1,2], k = 4
-
-Output:
-
-[2,0,1]
-
-Constraints:
-
-The number of nodes in the list is in the range [0, 500].
--100 <= Node.val <= 100
-"""
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -80,7 +50,35 @@ if __name__ == "__main__":
         print(current.val, end=" -> ")
         current = current.next
     print("None")
-   
 
-     
- 
+"""
+Given the head of a linked list, rotate the list to the right by k places.
+
+Input:
+head: The head of the linked list. (0 <= length of the list <= 500)
+k: The number of places to rotate the list. (0 <= k <= 2 * 10^9)
+
+Output:
+Return the head of the rotated linked list.
+
+Examples:
+
+Input:
+
+head = [1,2,3,4,5], k = 2
+
+Output:
+[4,5,1,2,3]
+Input:
+
+head = [0,1,2], k = 4
+
+Output:
+
+[2,0,1]
+
+Constraints:
+
+The number of nodes in the list is in the range [0, 500].
+-100 <= Node.val <= 100
+"""
