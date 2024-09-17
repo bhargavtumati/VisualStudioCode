@@ -59,9 +59,9 @@ XOR Pair in Trie
 You are given an array containing n number of elements. The elements of the array are inserted in a Trie data structure in the form of binary representation for example 1, 2 and 3 will be represented as:
 
                     0                   2nd bit
-                  /   \
+                 0>0   0>1
                  0      1               1st bit
-                 \     / \
+                0>1  1>0  1>1   
                   1   0    1            0th bit
 Note that the Trie is for 32-bit representation and out of those only first three are shown in the example above.
 

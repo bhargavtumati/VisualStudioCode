@@ -23,6 +23,7 @@ class Solution:
 
         # Build a maxheap.
         for i in range(N // 2 - 1, -1, -1):
+            print(arr)
             heapify(arr, N, i)
 
         return arr
