@@ -28,28 +28,27 @@ Constraints:
 s only contains lowercase English letters."""
 
 from cmath import inf
+from functools import lru_cache
 
 
 class Solution:
+    @lru_cache(None)
     def palindromePartition(self, s: str, k: int) -> int:
-        n = len(s)
-        g = [[0] * n for _ in range(n)]   #len(s)*len(s) matrix
-        for i in range(n - 1, -1, -1):  #reverse n-1 to 0
-            for j in range(i + 1, n):  # i+1 to n
-                g[i][j] = int(s[i] != s[j])  #!= means 1 , == means 0
-                if i + 1 < j:  
-                    g[i][j] += g[i + 1][j - 1]
 
-        f = [[0] * (k + 1) for _ in range(n + 1)]  #k+1 * n+1 matrix
-        for i in range(1, n + 1):
-            for j in range(1, min(i, k) + 1):
-                if j == 1:
-                    f[i][j] = g[0][i - 1]
-                else:
-                    f[i][j] = inf
-                    for h in range(j - 1, i):
-                        f[i][j] = min(f[i][j], f[h][j - 1] + g[h][i - 1])
-        return f[n][k]
+        n, ans = len(s), inf
+
+        if n == k: return 0                         # <-- 1)
+
+        if k == 1:                                  # <-- 2)
+            return sum(s[i] != s[~i] for i in range(n//2))
+    
+        for i in range((n - k )+ 1):                      # <-- 3)
+            sm = (self.palindromePartition(s[:i+1],     1) +
+                  self.palindromePartition(s[i+1:], k - 1))
+
+            if sm < ans: ans = sm                   # <-- 4)
+
+        return ans 
     
 if __name__=="__main__":
        s="abc"
@@ -57,4 +56,16 @@ if __name__=="__main__":
        f=Solution()
        print(f.palindromePartition(s,k))
 
-                
+"""
+Here's the plan:
+
+If the string is the length k, no are changes required, and we return 0.
+
+If k == 1, we return the score of that string.
+
+Other wise, we iteratively halve the string. We treat the left half as the left-most substring, 
+and recurse the right half.
+
+We determine the optimum answer from this iteration.
+
+"""

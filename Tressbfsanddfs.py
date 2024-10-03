@@ -10,7 +10,7 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def level_order_traversal(self):
+    def level_order_traversal(self):  #bfs
         # Formalities/Edge Cases
         if self.root is None:
             return []
@@ -44,7 +44,7 @@ class BinaryTree:
         result = self.level_order_traversal()
         return len(result)
     
-    def preorder_traversal(self, root):
+    def preorder_traversal(self, root):   #dfs
         # formalities
         if root is None:
             return []
@@ -55,7 +55,7 @@ class BinaryTree:
         result.extend(self.preorder_traversal(root.right))
         return result
 
-    def inorder_traversal(self, root):
+    def inorder_traversal(self, root):   #dfs
         # formalities
         if root is None:
             return []
@@ -66,7 +66,7 @@ class BinaryTree:
         result.extend(self.inorder_traversal(root.right))
         return result
     
-    def postorder_traversal(self, root):
+    def postorder_traversal(self, root):   #dfs
         # formalities
         if root is None:
             return []
@@ -80,11 +80,11 @@ class BinaryTree:
 tree = BinaryTree()
 
 tree.root = Node(1)
-tree.root.left = Node(12)
+tree.root.left = Node(2)
 tree.root.right = Node(3)
 tree.root.left.left = Node(4)
 tree.root.right.left = Node(5)
-tree.root.right.left.right = Node(6)
+tree.root.right.right = Node(6)
 
 
 print("level order traversal")
