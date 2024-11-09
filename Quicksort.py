@@ -1,42 +1,32 @@
 def partition(arr, low, high):
   
-    # Choose the pivot
-    pivot = arr[high]
+    pivot = arr[high]    # Choose the pivot
     
     i = low - 1
     
-    # Traverse arr[low..high] and move all smaller
-    # elements on the left side. Elements from low to 
-    # i are smaller after every iteration
-    for j in range(low, high):
-        if arr[j] < pivot:
-            i += 1
+    for j in range(low, high):    # Traverse arr[low..high] and move all smaller
+        if arr[j] < pivot:     # elements on the left side. Elements from low to 
+            i += 1                 # i are smaller after every iteration
             arr[i], arr[j] = arr[j], arr[i]
-    
-    # Move pivot after smaller elements and
-    # return its position
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1
+     
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]     # Move pivot after smaller elements 
+    return i + 1                # and return its position
 
-# The QuickSort function implementation
-def quick_sort(arr, low, high):
+def quick_sort(arr, low, high):     # The QuickSort function implementation
     if low < high:
-        # pi is the partition return index of pivot
-        pi = partition(arr, low, high)
+       
+        pi = partition(arr, low, high)        # pi is the partition return index of pivot
 
-        # Recursion calls for smaller elements
-        # and greater or equals elements
-        quick_sort(arr, low, pi - 1)
-        quick_sort(arr, pi + 1, high)
+        quick_sort(arr, low, pi - 1)         # Recursion calls for smaller elements and 
+        quick_sort(arr, pi + 1, high)        # greater or equals elements
 
-# Function to print an array
-def print_array(arr):
+def print_array(arr):      # Function to print an array
     for i in arr:
         print(i, end=" ")
     print()
 
-# Driver code
-if __name__ == "__main__":
+
+if __name__ == "__main__":     # Driver code
     arr = [10, 7, 8, 9, 1, 5]
     print("Given array is")
     print_array(arr)
